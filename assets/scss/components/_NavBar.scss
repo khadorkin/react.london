@@ -1,6 +1,8 @@
 // NAVIGATION BAR
   .NavBar {
-    background: $events-color-faded;
+    background: $grey;
+    height: 50px;
+    color: white;
     &__tabs {
       display: -webkit-flex;
       display: flex;
@@ -13,32 +15,76 @@
 
       a {
         text-decoration: none;
-        text-transform: uppercase;
+        text-transform: none;
         font-weight: bold;
         font-size: 14px;
         width: 40vw;
         min-width: 130px;
         text-align: center;
-        color: $grey;
-        
+        color: $conference-color;
+
         height: 50px;
         vertical-align: middle;
         display: table-cell;
 
-        &.NavBar__tab--active {
+        &.NavBar__tab--active--conference {
           border-bottom: $solid-border;
+          color: $grey;
+          background-color: $conference-color-faded;
         }
 
-        &:not(.NavBar__tab--active){
+        &.NavBar__tab--conference {
           padding-bottom: 3px;
-          &:hover {
-            padding-bottom: 0px;
-            border-bottom: $solid-border-faded;
-          }
+          color: $conference-color;
+            &:hover {
+              padding-bottom: 0px;
+              border-bottom: $solid-border;
+              background-color: $conference-color-faded;
+              color: $grey;
+            }
         }
+
+        &.NavBar__tab--active--community {
+          border-bottom: $solid-border;
+          color: $grey;
+          background-color: $events-color-faded;
+        }
+
+        &.NavBar__tab--community {
+          padding-bottom: 3px;
+          color: $events-color;
+            &:hover {
+              padding-bottom: 0px;
+              border-bottom: $solid-border;
+              background-color: $events-color-faded;
+              color: $grey;
+            }
+        }
+
+
+
+        // &:not(.NavBar__tab--active--conference){
+        //   padding-bottom: 3px;
+        //   &:hover {
+        //     padding-bottom: 0px;
+        //     border-bottom: $solid-border;
+        //     background-color: $conference-color-faded;
+        //     color: $grey;
+        //   }
+        // }
+        //
+        // &:not(.NavBar__tab--active--community){
+        //   padding-bottom: 3px;
+        //   &:hover {
+        //     padding-bottom: 0px;
+        //     border-bottom: $solid-border;
+        //     background-color: $conference-color-faded;
+        //     color: $grey;
+        //   }
+        // }
 
         @media (min-width: 768px) { //same as in .About.scss
-          height: 63px;
+          height: 50px;
         }
 
       }

@@ -3,6 +3,7 @@
     background-color: $events-color;
     font-size: 16px;
     padding: 22px 0px;
+    border-bottom: $solid-border;
 
     &__text {
       margin-bottom: 7px;
@@ -12,6 +13,10 @@
     &__text--bold {
       margin-top: 0px;
       margin-bottom: 0px;
+    }
+
+    &--conference {
+      background-color: $conference-color;
     }
 
     @media (min-width: 768px) {

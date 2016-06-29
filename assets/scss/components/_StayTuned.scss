@@ -13,6 +13,10 @@
     text-align: center;
   }
 
+  &--conference {
+    background-color: $conference-color;
+  }
+
   &__summary {
     margin-bottom: 35px;
     text-align: center;
@@ -67,6 +71,10 @@
       &:hover {
         color: $white;
       }
+    }
+
+    &__submit--conference {
+      color: $conference-color;
     }
 
   }

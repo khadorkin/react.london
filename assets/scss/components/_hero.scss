@@ -8,7 +8,7 @@
   overflow: hidden;
 
   position: relative;
-  
+
   display: -webkit-flex;
   display: flex;
 
@@ -19,6 +19,12 @@
   align-content: center;
 
   z-index: -1;
+
+
+  &--conference {
+    background-color: $conference-color;
+    background-image: none;
+  }
 
   &__title {
     position: absolute;
