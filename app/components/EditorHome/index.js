@@ -1,5 +1,10 @@
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
+import InlineEditor from '../InlineEditor';
+
+const handleChange = (event, updateContent) => {
+  updateContent(event.target.name, event.target.value);
+};
 
 const EventLink = ({ id }) => {
   const slug = `/event/${id}`;
@@ -15,11 +20,21 @@ function newEventID(eventIDs) {
   return (max + 1).toString();
 }
 
-const EditorHome = ({ eventIDs }) => (
+
+const EditorHome = ({ eventIDs, currentlyEditing, exampleinput, toggleEditing, updateContent }) => (
   <div className="home">
     <h1>
       Home!
     </h1>
+    <p><button onClick={toggleEditing}>Toggle editing</button></p>
+
+    <InlineEditor
+      currentlyEditing={currentlyEditing}
+      fieldValue={exampleinput}
+      onClick={toggleEditing}
+      onChange={e => handleChange(e, updateContent)}
+    />
+
     <img src="/img/PNG/ReactLondon_SaveTheDate_Icons-01.png" alt="Red Badger" />
     <ul>
       <li>
